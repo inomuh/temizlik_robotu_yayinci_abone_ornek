@@ -3,7 +3,7 @@
 
 import rospy
 
-from temizlik_robotu_yayinci_abone_ornek_msgs.msg import MesafeBilgisiOrnek
+from temizlik_robotu_yayinci_abone_ornek.msg import MesafeBilgisiOrnek
 import random
 
 class TemizlikRobotuAboneOrnek(object):
@@ -13,6 +13,9 @@ class TemizlikRobotuAboneOrnek(object):
 
 
     def ana_fonksiyon(self):
+        # /mesafe_hesabi_ornek topiğine abone olmaktadır.
+        # MesafeBilgisiOrnek msg üzerinden mesajlaşmayı sağlamaktadır.
+        # self.mesafe_hesabi_callback_fonksiyonu topikten gelen değerleri okumak ve işlem yapmak için çağırılan fonksiyondur.
         rospy.Subscriber('/mesafe_hesabi_ornek', MesafeBilgisiOrnek, self.mesafe_hesabi_callback_fonksiyonu)
 
         rospy.spin()
@@ -20,9 +23,7 @@ class TemizlikRobotuAboneOrnek(object):
 
     def mesafe_hesabi_callback_fonksiyonu(self, mesafe_bilgisi_mesaji):
         # mesafe_bilgisi_mesaji mesajinın içeriğini okur.
-        print("\n")
-        print("Okunan deger = " + str(mesafe_bilgisi_mesaji.mesafe_bilgisi))
-        print("\n\n\n")
+        print("\nOkunan deger = " + str(mesafe_bilgisi_mesaji.mesafe_bilgisi) + "\n\n\n")
 
 
 if __name__ == '__main__':

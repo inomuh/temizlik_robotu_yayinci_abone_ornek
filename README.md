@@ -24,4 +24,4 @@ source devel/setup.bash
 
 Yayıncı ve Aboneyi çalıştırmak için
 
-$ roslaunch temizlik_robotu_yayinci_abone_ornek_baslat temizlik_robotu_yayinci_abone_ornek_baslat.launch
+$ roslaunch temizlik_robotu_yayinci_abone_ornek temizlik_robotu_yayinci_abone_ornek_baslat.launch

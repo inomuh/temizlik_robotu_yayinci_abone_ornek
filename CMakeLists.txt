@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(temizlik_robotu_yayinci_abone_ornek_msgs)
-
+project(temizlik_robotu_yayinci_abone_ornek)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
@@ -26,7 +25,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-foreach(dir include msg)
+foreach(dir launch msg scripts)
     install(DIRECTORY ${dir}/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach()
